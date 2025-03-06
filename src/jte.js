@@ -1,10 +1,12 @@
 function jte(json) {
-    // Get the current script element
+    // Get the script that loaded jte.js
     const scripts = document.getElementsByTagName('script');
-    const currentScript = scripts[scripts.length - 1];
+    const currentScript = Array.from(scripts).find(script => 
+        script.src.includes('jte.js')
+    );
     
     // Debug logging if dev="true"
-    if (currentScript.getAttribute('dev') === 'true') {
+    if (currentScript && currentScript.getAttribute('dev') === 'true') {
         console.log(
             '%c %c JTE Debug \n' + 
             'Element: ' + JSON.stringify(json, null, 2) + 
