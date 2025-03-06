@@ -4,10 +4,12 @@ function jte(json) {
         throw new Error('jte: No JSON object provided');
     }
     if (!json.tag) {
+        console.log(json);
         throw new Error('jte: "tag" property is required');
     }
     if (typeof json.tag !== 'string') {
-        throw new Error('jte: "tag" must be a string');
+        console.log(json);
+        throw new Error('jte: "tag" must be a string');       
     }
 
     if (typeof json !== 'object' || Array.isArray(json)) {
