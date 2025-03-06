@@ -3,12 +3,10 @@ function jte(json) {
     if (!json) {
         throw new Error('jte: No JSON object provided');
     }
-    if (!json.tag) {
-        console.log(json);
+    if (!json.tag) { 
         throw new Error('jte: "tag" property is required');
     }
-    if (typeof json.tag !== 'string') {
-        console.log(json);
+    if (typeof json.tag !== 'string') {  
         throw new Error('jte: "tag" must be a string');       
     }
 
@@ -35,7 +33,7 @@ function jte(json) {
         Object.entries(json).forEach(([key, value]) => {
             if (key === 'innerhtml') {
                 if (typeof value !== 'string') {
-                    console.warn('jte: innerhtml should be a string');
+                    console.warn('jte: innerhtml should be a string', json);
                 }
                 field.innerHTML = value;
             } else if (key === 'textnode') {
