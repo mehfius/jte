@@ -1,19 +1,12 @@
 function jte(json) {
-    // Get the script that loaded jte.js
-    const scripts = document.getElementsByTagName('script');
-    const currentScript = Array.from(scripts).find(script => 
-        script.src.includes('jte.js')
-    );
+    // Get the current script element using the recommended method
+    const currentScript = document.currentScript;
     
     // Debug logging if dev="true"
     if (currentScript && currentScript.getAttribute('dev') === 'true') {
         console.log(
-            '%c %c JTE Debug \n' + 
-            'Element: ' + JSON.stringify(json, null, 2) + 
-            ' %c ',
-            'background: red; padding: 5px 0;',
-            'background: red; color: white; padding: 5px 0;',
-            'background: red; padding: 5px 0;'
+            '%cElement: ' + json.name + 
+            'background: grey; padding: 0 5px 0 5px;'
         );
     }
 
