@@ -4,10 +4,7 @@ function jte(json) {
     
     // Debug logging if dev="true"
     if (currentScript && currentScript.getAttribute('dev') === 'true') {
-        console.log(
-            '%cElement: ' + json.name + 
-            'background: grey; padding: 0 5px 0 5px;'
-        );
+        console.log('%cElement: ' + json.name, 'background: grey; padding: 0 5px 0 5px;');
     }
 
     const field = document.createElement(json.tag);
