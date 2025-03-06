@@ -38,7 +38,7 @@ function jte(json) {
                 field.innerHTML = value;
             } else if (key === 'textnode') {
                 if (typeof value !== 'string') {
-                    console.warn('jte: textnode should be a string');
+                    console.warn('jte: textnode should be a string', json);
                 }
                 field.appendChild(document.createTextNode(value));
             } else if (key === 'value' && json.tag === 'textarea') {
