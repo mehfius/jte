@@ -54,7 +54,7 @@ Enable debug mode to see additional logging:
 
 We've created a live example page demonstrating JTE's capabilities. You can:
 
-1. View the live example at [https://jte.mehfi.us](https://jte.mehfi.us)
+1. View the live example at [https://mehfius.github.io/jte/](https://mehfius.github.io/jte/)
 2. Explore the source code in the `docs` folder of this repository
 3. See the example in action with:
    - Container creation
