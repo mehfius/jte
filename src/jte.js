@@ -22,7 +22,7 @@ function jte(json) {
 
     const currentScript = document.currentScript;
     if (currentScript && currentScript.getAttribute('dev') === 'true') {
-        console.log('%cElement: ' + json.name,'background: grey; padding: 0 5px 0 5px;');
+        console.log('%cRunning in development environment - Speedj v1.0.5', 'background: grey; padding: 0 5px 0 5px;');
     }
 
     try {
