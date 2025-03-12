@@ -33,16 +33,20 @@ function jte(json) {
         Object.entries(json).forEach(([key, value]) => {
             if (key === 'innerhtml') {
                 if (typeof value !== 'string') {
-                    console.warn('jte: innerhtml should be a string', json);
+                    console.warn('jte: innerhtml should be a string');
                 }
                 field.innerHTML = value;
             } else if (key === 'textnode') {
                 if (typeof value !== 'string') {
-                    console.warn('jte: textnode should be a string', json);
+                    console.warn('jte: textnode should be a string');
                 }
                 field.appendChild(document.createTextNode(value));
-            } else if (key === 'value' && json.tag === 'textarea') {
-                field.appendChild(document.createTextNode(value));
+            } else if (key === 'value') {
+                if (json.tag === 'textarea') {
+                    field.appendChild(document.createTextNode(value));
+                } else if (['input', 'textarea', 'select'].includes(json.tag)) {
+                    field.value = value;
+                }
             } else if (eventHandlers.includes(key)) {
                 if (typeof value !== 'function') {
                     console.warn(`jte: ${key} should be a function`);

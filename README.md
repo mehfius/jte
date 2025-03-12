@@ -27,7 +27,10 @@ const element = jte({
 - **tag**: The HTML tag name (required, must be a string)
 - **innerhtml**: HTML content (should be a string)
 - **textnode**: Text content (should be a string)
-- **value**: Input value (special handling for textarea)
+- **value**: Input value (special handling for different element types)
+  - For `textarea`: Uses `appendChild`
+  - For `input`/`select`: Uses `value` property
+  - For other elements: Uses `setAttribute`
 - **attributes**: Any valid HTML attribute
 - **event handlers**: `onclick`, `onchange`, `onkeyup`, `onkeypress`, `oninput`, `onfocus`, `onblur` (should be functions)
 
@@ -69,14 +72,13 @@ To run locally:
 ## Example Code
 
 ```javascript
-const button = jte({
-    tag: 'button',
-    class: 'btn-primary',
-    textnode: 'Click Me',
-    onclick: () => console.log('Button clicked!')
+const input = jte({
+    tag: 'input',
+    type: 'text',
+    value: 'teste'
 });
 
-document.body.appendChild(button);
+document.body.appendChild(input);
 ```
 
 ## License
