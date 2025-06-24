@@ -40,7 +40,7 @@ function jte(json) {
             } else if (key === 'value') {
                 if (json.tag === 'textarea') {
                     field.appendChild(document.createTextNode(value));
-                } else if (['input', 'textarea', 'select'].includes(json.tag)) {
+                } else if (['input', 'textarea', 'select','option'].includes(json.tag)) {
                     field.value = value;
                 }
             } else if (eventHandlers.includes(key)) {
